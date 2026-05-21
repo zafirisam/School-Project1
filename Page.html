@@ -1,4 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Universe</title>
 
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg,#0f172a,#1e293b,#111827);
+      color:white;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    header{
+      text-align:center;
+      padding:60px 20px;
+    }
+
+    h1{
+      font-size:4rem;
+      background: linear-gradient(to right,#38bdf8,#818cf8,#c084fc);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:10px;
+    }
+
+    .subtitle{
+      color:#cbd5e1;
+      font-size:1.2rem;
+    }
+
+    .container{
+      width:90%;
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      padding-bottom:60px;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:20px;
+      padding:25px;
+      backdrop-filter: blur(10px);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px) scale(1.02);
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .emoji{
+      font-size:3rem;
+      margin-bottom:15px;
+    }
+
+    .card h2{
+      margin-bottom:10px;
+      color:#93c5fd;
+    }
+
+    button{
+      margin-top:15px;
+      padding:12px 18px;
+      border:none;
+      border-radius:10px;
+      background:#6366f1;
+      color:white;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#8b5cf6;
+    }
+
+    .random-box{
+      margin-top:15px;
+      padding:12px;
+      background:rgba(255,255,255,0.05);
+      border-radius:10px;
+      color:#e2e8f0;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌌 Random Universe</h1>
+    <p class="subtitle">
+      A completely useless website full of random things.
+    </p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="emoji">🦆</div>
+      <h2>Random Fact</h2>
+      <p>Octopuses have 3 hearts.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🚀</div>
+      <h2>Space Stuff</h2>
+      <p>One day on Venus is longer than one year on Venus.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🍕</div>
+      <h2>Pizza Wisdom</h2>
+      <p>Cold pizza at 2AM tastes scientifically better.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🎲</div>
+      <h2>Random Generator</h2>
+
+      <button onclick="generateRandom()">
+        Generate Random Thing
+      </button>
+
+      <div class="random-box" id="randomText">
+        Click the button 👀
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    ✨ Built with chaos and questionable decisions ✨
+  </footer>
+
+  <script>
+    const randomThings = [
+      "Bananas are berries 🍌",
+      "You blink about 20 times a minute 👀",
+      "Sharks existed before trees 🦈",
+      "Your keyboard is dirtier than you think ⌨️",
+      "Penguins propose with pebbles 🐧",
+      "There are more stars than grains of sand ✨",
+      "Cats probably judge humans 😼",
+      "Water can boil and freeze at the same time 💧"
+    ];
+
+    function generateRandom(){
+      const random =
+        randomThings[Math.floor(Math.random() * randomThings.length)];
+
+      document.getElementById("randomText").innerText = random;
+    }
+  </script>
+
+</body>
 </html>
